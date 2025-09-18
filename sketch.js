@@ -41,7 +41,7 @@ function setup() {
   var message = "This is a message";
  console.log(message)
   
-  trex = createSprite(50,160,20,50);
+  trex = createSprite(50,160,200,50);
   trex.addAnimation("running", trex_running);
   trex.addAnimation("collided", trex_collided);
   
@@ -119,8 +119,10 @@ function draw() {
     if(obstaclesGroup.isTouching(trex)){
         //trex.velocityY = -12;
         jumpSound.play();
-        gameState = END;
-        dieSound.play()
+        trex.velocityY = -12;
+        
+        //gameState = END;
+        //dieSound.play()
       
     }
   }
